@@ -8,6 +8,7 @@ COPY package*.json ./
 RUN npm ci
 # Bundle app source
 COPY . .
+RUN node -v
 RUN npm run build
 ## Run 
 FROM nginx:alpine
