@@ -1,6 +1,6 @@
 ## Build
 # FROM beevelop/ionic:14 AS ionic
-FROM node:14
+FROM node:14 AS ionic
 # Create app directory
 WORKDIR /usr/src/app
 # Install app dependencies
@@ -14,5 +14,5 @@ RUN npm run build
 ## Run 
 FROM nginx:alpine
 #COPY www /usr/share/nginx/html
-# COPY --from=ionic  /usr/src/app/www /usr/share/nginx/html
-COPY /usr/src/app/www /usr/share/nginx/html
+COPY --from=ionic  /usr/src/app/www /usr/share/nginx/html
+# COPY /usr/src/app/www /usr/share/nginx/html
