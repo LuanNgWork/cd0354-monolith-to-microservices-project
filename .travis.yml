@@ -18,9 +18,13 @@ before_script:
 ## Build
 script:
   - docker --version # print the version for logging
+  - node -v
   - docker build -t udagram-api-feed ./udagram-api-feed
+  - node -v
   - docker build -t udagram-api-user ./udagram-api-user
+  - node -v
   - docker build -t udagram-frontend ./udagram-frontend
+  - node -v
   - docker build -t reverseproxy ./udagram-reverseproxy
 ## Tagging
   - docker tag udagram-api-feed larryng95/udagram-api-feed:v1
