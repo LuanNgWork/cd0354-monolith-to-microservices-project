@@ -33,7 +33,7 @@ script:
   - docker tag reverseproxy larryng95/reverseproxy:v1
 
 after_success:
-  - echo $DOCKER_PASSWORD | docker login -u DOCKER_USERNAME --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   # - docker login -u DOCKER_USERNAME --p DOCKER_PASSWORD
   - docker push larryng95/udagram-api-feed:v1
   - docker push larryng95/udagram-api-user:v1
