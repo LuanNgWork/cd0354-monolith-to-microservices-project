@@ -12,8 +12,6 @@ install:
 # Scripts to be run such as tests
 before_script:
   - echo "no tests"
-  - echo DOCKER_USERNAME
-  - echo DOCKER_PASSWORD
 
 ## Assuming the .travis.yml file is in the project directory, and there is a separate sub-directory for each service
 ## Use either `docker-compose` or individual `docker build` commands
@@ -35,7 +33,8 @@ script:
   - docker tag reverseproxy larryng95/reverseproxy:v1
 
 after_success:
-  - echo DOCKER_PASSWORD | docker login -u DOCKER_USERNAME --password-stdin
+  # - echo DOCKER_PASSWORD | docker login -u DOCKER_USERNAME --password-stdin
+  - docker login -u DOCKER_USERNAME -p DOCKER_PASSWORD
   - docker push larryng95/udagram-api-feed:v1
   - docker push larryng95/udagram-api-user:v1
   - docker push larryng95/udagram-frontend:v1
