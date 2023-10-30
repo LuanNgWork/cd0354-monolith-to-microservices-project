@@ -4,27 +4,27 @@ kind: Deployment
 
 metadata:
   labels:
-    service: backend-user
+    service: backend-feed
 
-  name: backend-user
+  name: backend-feed
 
 spec:
   replicas: 2
 
   selector:
     matchLabels:
-      service: backend-user
+      service: backend-feed
 
   template:
     metadata:
       labels:
-        service: backend-user
+        service: backend-feed
 
     spec:
       containers:
-        - image: larryng95/udagram-api-user:latest
+        - image: larryng95/udagram-api-feed:v1
 
-          name: backend-user
+          name: backend-feed
 
           imagePullPolicy: Always
 
@@ -39,7 +39,7 @@ spec:
 
               valueFrom:
                 configMapKeyRef:
-                  name: env-config
+                  name: env-configmap
 
                   key: URL
 
@@ -47,7 +47,7 @@ spec:
 
               valueFrom:
                 configMapKeyRef:
-                  name: env-config
+                  name: env-configmap
 
                   key: JWT_SECRET
 
@@ -55,7 +55,7 @@ spec:
 
               valueFrom:
                 configMapKeyRef:
-                  name: env-config
+                  name: env-configmap
 
                   key: AWS_BUCKET
 
@@ -63,7 +63,7 @@ spec:
 
               valueFrom:
                 configMapKeyRef:
-                  name: env-config
+                  name: env-configmap
 
                   key: AWS_PROFILE
 
@@ -71,7 +71,7 @@ spec:
 
               valueFrom:
                 configMapKeyRef:
-                  name: env-config
+                  name: env-configmap
 
                   key: AWS_REGION
 
@@ -79,7 +79,7 @@ spec:
 
               valueFrom:
                 configMapKeyRef:
-                  name: env-config
+                  name: env-configmap
 
                   key: POSTGRES_DB
 
@@ -87,7 +87,7 @@ spec:
 
               valueFrom:
                 configMapKeyRef:
-                  name: env-config
+                  name: env-configmap
 
                   key: POSTGRES_HOST
 

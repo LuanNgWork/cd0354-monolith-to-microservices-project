@@ -15,7 +15,7 @@ spec:
         service: reverseproxy
     spec:
       containers:
-        - image: larryng95/reverseproxy:latest
+        - image: larryng95/reverseproxy:v1
           name: reverseproxy
           imagePullPolicy: Always
           ports:
