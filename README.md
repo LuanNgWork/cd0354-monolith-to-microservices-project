@@ -69,7 +69,7 @@ Launch the frontend app locally.
     ```bash
     ionic serve
     ```
-* You can visit `http://localhost:8100` in your web browser to verify that the application is running. You should see a web interface.
+* You can visit `http://localhost:8080` in your web browser to verify that the application is running. You should see a web interface.
 
 ## Tips
 1. Take a look at `udagram-api` -- does it look like we can divide it into two modules to be deployed as separate microservices?
